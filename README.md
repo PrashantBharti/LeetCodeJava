@@ -1,2 +1,2 @@
 # LeetCodeJava
-Leet Code solutions using Java
+Leet Code solution for https://leetcode.com/problems/two-sum/description/ using Java
