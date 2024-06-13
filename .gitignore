@@ -1,5 +1,6 @@
 # Idea folder
 .idea
+*.iml
 
 # Compiled class file
 *.class
