@@ -1,11 +1,13 @@
-import lc_3_longest_substring_without_repeating_characters.Solution;
+import lc_4_median_of_sorted_arrays.Solution;
 
 class Application {
     public static void main(String[] args) {
+        int[] nums1 = {3};
+        int[] nums2 = {-2, -1};
+
         Solution solution = new Solution();
 
-        final String input = "abba";
-        int ans = solution.lengthOfLongestSubstring(input);
+        double ans = solution.findMedianSortedArrays(nums1, nums2);
         System.out.println(ans);
     }
 }
