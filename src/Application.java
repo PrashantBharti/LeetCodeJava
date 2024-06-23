@@ -1,12 +1,13 @@
-import lc_5_longest_palindromic_substring.Solution;
+import lc_6_zigzag_conversion.Solution;
 
 class Application {
     public static void main(String[] args) {
-        final String input = "abrbadaadab";
+        final String input = "PAYPALISHIRING";
+        final Integer numRows = 3;
 
         final Solution solution = new Solution();
 
-        final String lps = solution.longestPalindrome(input);
-        System.out.println(lps);
+        final String output = solution.convert(input, numRows);
+        System.out.println(output);
     }
 }
