@@ -1,13 +1,10 @@
-import lc_6_zigzag_conversion.Solution;
+import lc_7_reverse_integer.Solution;
 
 class Application {
     public static void main(String[] args) {
-        final String input = "PAYPALISHIRING";
-        final Integer numRows = 3;
-
         final Solution solution = new Solution();
 
-        final String output = solution.convert(input, numRows);
-        System.out.println(output);
+        int ans = solution.reverse(-1563847412);
+        System.out.println(ans);
     }
 }
