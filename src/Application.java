@@ -1,10 +1,11 @@
-import lc_7_reverse_integer.Solution;
+import lc_8_string_to_integer.Solution;
 
 class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        int ans = solution.reverse(-1563847412);
+        final String input = "-91283472332";
+        int ans = solution.myAtoi(input);
         System.out.println(ans);
     }
 }
