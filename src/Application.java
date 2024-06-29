@@ -1,11 +1,11 @@
-import lc_13_roman_to_integer.Solution;
+import lc_14_longest_common_prefix.Solution;
 
 class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        String s = "XCV";
-        int ans = solution.romanToInt(s);
+        final String[] strs = {"test", "testchd", "testa"};
+        final String ans = solution.longestCommonPrefix(strs);
         System.out.println(ans);
     }
 }
