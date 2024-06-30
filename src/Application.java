@@ -1,13 +1,13 @@
-import lc_15_3_sum.Solution;
-
-import java.util.List;
+import lc_16_3_sum_closest.Solution;
 
 class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        int[] nums = {-1,0,1,2,-1,-4};
-        final List<List<Integer>> ans = solution.threeSum(nums);
+        int[] nums = {0, 0, 0};
+        int target = 1;
+
+        int ans = solution.threeSumClosest(nums, target);
         System.out.println(ans);
     }
 }
