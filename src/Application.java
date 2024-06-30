@@ -1,13 +1,15 @@
-import lc_16_3_sum_closest.Solution;
+import lc_17_letter_combinations_of_a_phone_number.Solution;
+
+import java.util.List;
 
 class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        int[] nums = {0, 0, 0};
-        int target = 1;
+        final String digits = "999";
 
-        int ans = solution.threeSumClosest(nums, target);
-        System.out.println(ans);
+        List<String> combs = solution.letterCombinations(digits);
+        System.out.println(combs);
+        System.out.println(combs.size());
     }
 }
