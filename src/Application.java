@@ -1,4 +1,4 @@
-import lc_17_letter_combinations_of_a_phone_number.Solution;
+import lc_18_4_sum.Solution;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        final String digits = "999";
+        int[] nums = {1000000000,1000000000, 1000000000, 1000000000};
+        int target = -294967296;
 
-        List<String> combs = solution.letterCombinations(digits);
-        System.out.println(combs);
-        System.out.println(combs.size());
+        List<List<Integer>> res = solution.fourSum(nums, target);
+        System.out.println(res);
     }
 }
