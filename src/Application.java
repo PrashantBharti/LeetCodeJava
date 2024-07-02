@@ -1,15 +1,24 @@
-import lc_18_4_sum.Solution;
-
-import java.util.List;
+import lc_19_nth_node_from_end_of_list.Solution;
+import lc_19_nth_node_from_end_of_list.ListNode;
 
 class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        int[] nums = {1000000000,1000000000, 1000000000, 1000000000};
-        int target = -294967296;
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
 
-        List<List<Integer>> res = solution.fourSum(nums, target);
-        System.out.println(res);
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+
+        ListNode head = solution.removeNthFromEnd(n1, 5);
+        ListNode cur = head;
+        while (cur != null) {
+            System.out.println(cur.val);
+            cur = cur.next;
+        }
     }
 }
