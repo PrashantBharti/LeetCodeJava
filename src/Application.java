@@ -1,34 +1,26 @@
-import lc_23_merge_k_sorted_lists.Solution;
-import lc_23_merge_k_sorted_lists.ListNode;
-
-import java.util.List;
+import lc_24_swap_nodes_in_pairs.Solution;
+import lc_24_swap_nodes_in_pairs.ListNode;
 
 class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        ListNode n11 = new ListNode(1);
-        ListNode n2 = new ListNode(4);
-        ListNode n3 = new ListNode(5);
-        n11.next = n2;
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+        ListNode n5 = new ListNode(5);
+
+        n1.next = n2;
         n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
 
-        ListNode n21 = new ListNode(1);
-        n2 = new ListNode(3);
-        n3 = new ListNode(4);
-        n21.next = n2;
-        n2.next = n3;
+        ListNode res = solution.swapPairs(n1);
 
-        ListNode n31 = new ListNode(2);
-        n2 = new ListNode(6);
-        n31.next = n2;
-
-        ListNode[] arr = {n11, n21, n31};
-        ListNode merged = solution.mergeKLists(arr);
-
-        while (merged != null) {
-            System.out.println(merged.val);
-            merged = merged.next;
+        while (res != null) {
+            System.out.println(res.val);
+            res = res.next;
         }
     }
 }
