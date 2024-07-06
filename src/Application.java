@@ -1,5 +1,5 @@
-import lc_24_swap_nodes_in_pairs.Solution;
-import lc_24_swap_nodes_in_pairs.ListNode;
+import lc_25_reverse_nodes_in_k_group.Solution;
+import lc_25_reverse_nodes_in_k_group.ListNode;
 
 class Application {
     public static void main(String[] args) {
@@ -16,8 +16,7 @@ class Application {
         n3.next = n4;
         n4.next = n5;
 
-        ListNode res = solution.swapPairs(n1);
-
+        ListNode res = solution.reverseKGroup(n1, 0);
         while (res != null) {
             System.out.println(res.val);
             res = res.next;
