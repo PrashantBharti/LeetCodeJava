@@ -36,17 +36,12 @@ public class Solution {
             }
         }
 
-        ListNode mergedHead = null;
-        ListNode mergedTail = null;
+        ListNode mergedHead = new ListNode(-1);
+        ListNode mergedTail = mergedHead;
         while (!pq.isEmpty()) {
             Pair pr = pq.poll();
-            if (mergedHead == null) {
-                mergedHead = lists[pr.y];
-                mergedTail = mergedHead;
-            } else {
-                mergedTail.next = lists[pr.y];
-                mergedTail = mergedTail.next;
-            }
+            mergedTail.next = lists[pr.y];
+            mergedTail = mergedTail.next;
 
             lists[pr.y] = lists[pr.y].next;
             mergedTail.next = null;
@@ -56,6 +51,6 @@ public class Solution {
             }
         }
 
-        return mergedHead;
+        return mergedHead.next;
     }
 }
