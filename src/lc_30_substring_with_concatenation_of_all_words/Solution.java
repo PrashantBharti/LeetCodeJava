@@ -20,26 +20,31 @@ public class Solution {
         for (String word : words)
             map.put(word, map.getOrDefault(word, 0) + 1);
 
-        // offset can be from 0 to wordlen
-        for (int offset = 0; offset < wordLen; offset++) {
-            // substrings can be from 0 to s - winlen
-            for (int idx = offset; idx <= s.length() - winLen; idx = idx + wordLen) {
-                Map<String, Integer> mapCopy = new HashMap<>(map);
-                boolean exist = true;
-                // check all words in s
-                for (int i = idx; i < idx + winLen; i = i + wordLen) {
-                    // i to i + wordLen - 1
-                    String sWord = s.substring(i, i + wordLen);
-                    if (mapCopy.getOrDefault(sWord, 0) > 0)
-                        mapCopy.put(sWord, mapCopy.get(sWord) - 1);
-                    else {
-                        exist = false;
-                        break;
-                    }
-                }
-
-                if (exist)
+        Map<String, Integer> mapTemp = new HashMap<>();
+        Map<String, Boolean> seenStrings = new HashMap<>();
+        for (int idx = 0; idx <= s.length() - winLen; idx++) {
+            String sWin = s.substring(idx, idx + winLen);
+            if (seenStrings.containsKey(sWin)) {
+                if (seenStrings.get(sWin))
                     res.add(idx);
+
+                continue;
+            }
+
+            mapTemp.clear();
+            boolean matched = true;
+            for (int i = idx; i < idx + winLen; i = i + wordLen) {
+                String sWord = s.substring(i, i + wordLen);
+                mapTemp.put(sWord, mapTemp.getOrDefault(sWord, 0) + 1);
+                if (mapTemp.get(sWord) > map.getOrDefault(sWord, 0)) {
+                    matched = false;
+                    break;
+                }
+            }
+
+            seenStrings.put(sWin, matched);
+            if (matched) {
+                res.add(idx);
             }
         }
 
