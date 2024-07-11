@@ -1,15 +1,12 @@
-import lc_31_next_permutation.Solution;
-
-import java.util.Arrays;
-import java.util.List;
+import lc_32_longest_valid_parentheses.Solution;
 
 class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        int[] nums = {0, 0};
+        String s = "((()))())((((()))))))";
 
-        solution.nextPermutation(nums);
-        System.out.println(Arrays.toString(nums));
+        int res = solution.longestValidParentheses(s);
+        System.out.println(res);
     }
 }
