@@ -1,4 +1,4 @@
-import lc_36_valid_sudoku.Solution;
+import lc_37_sudoku_solver.Solution;
 
 import java.util.Arrays;
 
@@ -8,8 +8,8 @@ class Application {
 
         char[][] board = {
                 {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
-                {'6', '.', '.', '1', '9', '5', '.', '1', '.'},
-                {'.', '9', '8', '.', '.', '.', '6', '.', '.'},
+                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
                 {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
                 {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
                 {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
@@ -18,7 +18,9 @@ class Application {
                 {'.', '.', '.', '.', '8', '.', '.', '7', '9'},
         };
 
-        boolean res = solution.isValidSudoku(board);
-        System.out.println(res);
+        solution.solveSudoku(board);
+        for (int i = 0; i < board.length; i++) {
+            System.out.println(Arrays.toString(board[i]));
+        }
     }
 }
