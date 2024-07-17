@@ -1,12 +1,17 @@
-import lc_38_count_and_say.Solution;
+import lc_39_combination_sum.Solution;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 class Application {
     public static void main(String[] args) {
         final Solution solution = new Solution();
 
-        String res = solution.countAndSay(5);
-        System.out.println(res);
+        int[] candidates = {2, 3, 5};
+        List<List<Integer>> res = solution.combinationSum(candidates, 4);
+        for (List<Integer> list : res) {
+            System.out.println(list);
+        }
     }
 }
